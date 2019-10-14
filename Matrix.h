@@ -4,9 +4,9 @@ class Matrix{
 
     int **matrix;
     Matrix(int row, int column);
-    void initialize();
+    ~Matrix();
+    int initialize();
     void printMatrix();
-    void clean();
 
   private:
     int row;

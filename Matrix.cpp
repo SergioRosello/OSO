@@ -22,16 +22,17 @@ void Matrix::printMatrix(){
   }
 }
 
-void Matrix::initialize(){
+int Matrix::initialize(){
   for(int i = 0; i < this->row; ++i){
     for(int j = 0; j < this->column; ++j){
       this->matrix[i][j] = 0; 
     }
   }
+  return 0;
 }
 
-void Matrix::clean(){
-  // free
+// Destructor method
+Matrix::~Matrix(){
   for(int i = 0; i < this->row; ++i)
     delete [] this->matrix[this->column];
   delete [] this->matrix;
