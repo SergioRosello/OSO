@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Matrix.h"
+#include "board.h"
 
 int main(){
-  Matrix matrix = Matrix(10, 10);
-  matrix.initialize();
-  matrix.printMatrix();
+  Board board = Board(10, 10);
+  board.initialize();
+  board.printBoard();
 
   return 0;
 }

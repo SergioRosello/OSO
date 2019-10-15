@@ -1,18 +1,18 @@
-#include "Matrix.h"
+#include "board.h"
 #include "gtest/gtest.h"
 
 namespace {
 
 // The fixture for testing class Foo.
-class MatrixTest : public ::testing::Test {
+class BoardTest : public ::testing::Test {
  protected:
   // You can remove any or all of the following functions if its body
   // is empty.
-  MatrixTest() {
+  BoardTest() {
     // You can do set-up work for each test here.
   }
 
-  ~MatrixTest() override {
+  ~BoardTest() override {
      // You can do clean-up work that doesn't throw exceptions here.
   }
 
@@ -31,15 +31,15 @@ class MatrixTest : public ::testing::Test {
 
   int rows = 10;
   int columns = 10;
-  Matrix matrix = Matrix(rows, columns);
+  Board board = Board(rows, columns);
   // Objects declared here can be used by all tests in the test suite for Foo.
 };
 
 // Tests that the Matrix::Initialize() initializes to 0.
-TEST_F(MatrixTest, MethodInitializationSetsTo0) {
+TEST_F(BoardTest, MethodInitializationSetsTo0) {
   // Generate data to check
   // Generate a matrix to check with?
-  EXPECT_EQ(matrix.matrix[rows-1][columns-1], 0);
+  EXPECT_EQ(board.board[rows-1][columns-1], 0);
 }
 
 }  // namespace
