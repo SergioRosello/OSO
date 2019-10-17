@@ -1,0 +1,5 @@
+terminal:
+  before_script:
+    - make
+  script: sleep 60
+
