@@ -1,7 +1,7 @@
 #include <iostream>
 
 // Include board headers
-#include "board.h"
+#include "../include/Board.h"
 
 Board::Board(int row, int column){
   this->row = row;

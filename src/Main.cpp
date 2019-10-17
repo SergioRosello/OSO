@@ -1,5 +1,5 @@
 #include <iostream>
-#include "board.h"
+#include "../include/Board.h"
 
 int main(){
   Board board = Board(10, 10);

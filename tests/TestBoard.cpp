@@ -1,4 +1,4 @@
-#include "board.h"
+#include "../include/Board.h"
 #include "gtest/gtest.h"
 
 namespace {
