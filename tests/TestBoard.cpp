@@ -43,8 +43,3 @@ TEST_F(BoardTest, MethodInitializationSetsTo0) {
 }
 
 }  // namespace
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
