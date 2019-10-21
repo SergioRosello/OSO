@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/Board.h"
 #include "../include/Letter.h"
+#include "../include/User.h"
 
 int main(){
   Board board = Board(10, 10);
@@ -12,6 +13,9 @@ int main(){
 
   std::cout << coordinates.x << " " << coordinates.y << "\n";
 
+  User user = User("John");
+
+  std::cout << user.getUsername() << std::endl;
+
   return 0;
 }
-
