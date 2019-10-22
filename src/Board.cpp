@@ -1,5 +1,3 @@
-#include <iostream>
-
 // Include board headers
 #include "../include/Board.h"
 
@@ -13,14 +11,6 @@ Board::Board(int row, int column){
   }
 }
 
-void Board::printBoard(){
-  for(int i = 0; i < this->row; ++i){
-    for(int j = 0; j < this->column; ++j){
-      std::cout << "[" << i << "][" << j << "] = " << this->board[i][j] << " "; 
-    }
-    std::cout << "\n";
-  }
-}
 
 int Board::initialize(){
   for(int i = 0; i < this->row; ++i){

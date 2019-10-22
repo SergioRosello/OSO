@@ -1,0 +1,3 @@
+class CliBoardView {
+  void drawBoard();
+};
