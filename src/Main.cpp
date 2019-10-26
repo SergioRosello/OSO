@@ -1,16 +1,19 @@
 #include <iostream>
 #include "../include/Board.h"
-#include "../include/Letter.h"
+#include "../include/Word.h"
 
 int main(){
-  Board board = Board(10, 10);
-  board.initialize();
-  board.printBoard();
-
-  Letter letter = Letter(Coordinates(20, 10), 'O');
+  Letter letter = Letter(Coordinates(20, 11), 'O');
   Coordinates coordinates = letter.getCoordinates();
 
-  std::cout << coordinates.x << " " << coordinates.y << "\n";
+  Letter secondLetter = Letter(Coordinates(21, 12), 'S');
+  Coordinates secondCoordinates = letter.getCoordinates();
+
+  Letter thirdLetter = Letter(Coordinates(22, 13), 'O');
+  Coordinates thidrCoordinates = letter.getCoordinates();
+
+  Word word = Word(letter, thirdLetter);
+  std::cout << "Word size: " << word.getSize() << "\n";
 
   return 0;
 }

@@ -9,6 +9,9 @@ class Word {
     int getSize(){
       return size;
     }
+    
+    // Word destructor
+    ~Word();
 
   private:
 
@@ -18,5 +21,6 @@ class Word {
 
     // Stores the word size
     int size;
-    ~Word();
+    // Calculates the word size based on the firs and last letter coordinates.
+    int calculateWordSize();
 };
