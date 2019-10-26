@@ -5,6 +5,7 @@ struct Coordinates {
   // Struct Coordinates constructor
   // assigns x to x 
   // assigns y to y
+  // Default coordinates are set to -1, wich are invalid
   Coordinates(int x = -1, int y = -1)
     : x(x), y(y)
   {}

@@ -2,7 +2,7 @@
 
 Letter::Letter(){ }
 
-Letter::Letter(Coordinates coordinates, char letter ) {
+Letter::Letter(Coordinates coordinates, char letter) {
   this->coordinates = coordinates;
   this-> letter = letter;
 } 
