@@ -30,14 +30,14 @@ namespace {
       }
 
       // Objects declared here can be used by all tests in the test suite for Foo.
-      User user = User(4);
+      User user = User("Ken");
   };
 
   // Tests that the Matrix::Initialize() initializes to 0.
   TEST_F(UserTest, Constructor) {
     // Generate data to check
     // Generate a matrix to check with?
-    EXPECT_EQ(user.test, 4);
+    EXPECT_EQ(user.getUsername(), "Ken");
   }
 
 }  // namespace
