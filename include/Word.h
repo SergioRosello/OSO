@@ -21,6 +21,6 @@ class Word {
 
     // Stores the word size
     int size;
-    // Calculates the word size based on the firs and last letter coordinates.
+    // Calculates the word size based on the first and last letter coordinates.
     int calculateWordSize();
 };
