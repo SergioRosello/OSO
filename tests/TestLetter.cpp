@@ -43,7 +43,7 @@ namespace OSO {
     EXPECT_EQ(Coordinates(1, 2).y, 2);
   }
 
-  TEST_F(LetterTest, CheckCoordinatesAreUpdateDcorrectly) {
+  TEST_F(LetterTest, CheckCoordinatesAreUpdatedcorrectly) {
     int x = 1;
     int y = 2;
 

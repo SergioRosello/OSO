@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../include/Board.h"
 #include "../include/Word.h"
+#include "../include/User.h"
 
 int main(){
   Letter letter = Letter(Coordinates(20, 11), 'O');
@@ -12,6 +13,9 @@ int main(){
   Word word = Word(letter, thirdLetter);
   std::cout << "Word size: " << word.getSize() << "\n";
 
+  User user = User("John");
+
+  std::cout << user.getUsername() << std::endl;
+
   return 0;
 }
-
