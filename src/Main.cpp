@@ -1,17 +1,23 @@
 #include <iostream>
 #include "../include/Board.h"
-#include "../include/Letter.h"
+#include "../include/Word.h"
+#include "../include/User.h"
+
+using namespace std;
 
 int main(){
-  Board board = Board(10, 10);
-  board.initialize();
-  board.printBoard();
+  Letter letter = Letter(Coordinates(20, 11), 'O');
 
-  Letter letter = Letter(Coordinates(20, 10), 'O');
-  Coordinates coordinates = letter.getCoordinates();
+  Letter secondLetter = Letter(Coordinates(21, 12), 'S');
 
-  std::cout << coordinates.x << " " << coordinates.y << "\n";
+  Letter thirdLetter = Letter(Coordinates(22, 13), 'O');
+
+  Word word = Word(letter, thirdLetter);
+  cout << "Word size: " << word.getSize() << endl;
+
+  User user = User("John");
+
+  cout << user.getUsername() << endl;
 
   return 0;
 }
-

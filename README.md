@@ -8,6 +8,4 @@ This game follows the same mechanics, except for a couple of rules:
 
 ## Class diagram
 
-![Class diagram](http://yuml.me/65216725.png)
-
-[Edditable class diagram](http://yuml.me/edit/65216725)
+![Class diagram](./wikiAssets/umlDiagram.png)
