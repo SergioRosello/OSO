@@ -3,6 +3,8 @@
 #include "../include/Word.h"
 #include "../include/User.h"
 
+using namespace std;
+
 int main(){
   Letter letter = Letter(Coordinates(20, 11), 'O');
 
@@ -11,11 +13,11 @@ int main(){
   Letter thirdLetter = Letter(Coordinates(22, 13), 'O');
 
   Word word = Word(letter, thirdLetter);
-  std::cout << "Word size: " << word.getSize() << "\n";
+  cout << "Word size: " << word.getSize() << endl;
 
   User user = User("John");
 
-  std::cout << user.getUsername() << std::endl;
+  cout << user.getUsername() << endl;
 
   return 0;
 }

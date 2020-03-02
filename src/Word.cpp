@@ -1,6 +1,8 @@
 #include <algorithm>
 #include "../include/Word.h"
 
+using namespace std;
+
 // Check if the word is valid
 // initialise the word
 Word::Word(Letter f, Letter l) {
@@ -16,7 +18,7 @@ Word::Word(Letter f, Letter l) {
 int Word::calculateWordSize() {
   const int height = abs(first.getCoordinates().y - last.getCoordinates().y) + 1;
   const int width = abs(first.getCoordinates().x - last.getCoordinates().x) + 1;
-  return std::max(height, width);
+  return max(height, width);
 }
 
 Word::~Word() {
