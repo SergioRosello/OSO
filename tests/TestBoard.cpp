@@ -31,7 +31,7 @@ class BoardTest : public ::testing::Test {
 
   int rows = 10;
   int columns = 10;
-  Board board = Board(rows, columns);
+  Board board = Board(rows, columns, "OSO");
   // Objects declared here can be used by all tests in the test suite for Foo.
 };
 

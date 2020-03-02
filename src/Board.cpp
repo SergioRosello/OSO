@@ -3,9 +3,10 @@
 
 using namespace std;
 
-Board::Board(int row, int column){
+Board::Board(int row, int column, string keyword){
   this->row = row;
   this->column = column;
+  this->keyword = keyword;
 
   this->board = new int*[this->row];
   for(int i = 0; i < row; ++i){
@@ -29,6 +30,14 @@ int Board::initialize(){
     }
   }
   return 0;
+}
+
+string Board::getKeyword() {
+    return this->keyword;
+}
+
+void Board::setKeyword(string keyword) {
+    this->keyword = keyword;
 }
 
 // Destructor method
