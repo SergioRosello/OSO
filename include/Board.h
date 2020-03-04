@@ -1,3 +1,6 @@
+#ifndef BOARD_H
+#define BOARD_H
+
 #include <string>
 
 class Board{
@@ -17,3 +20,5 @@ class Board{
     int column;
     std::string keyword;
 };
+
+#endif

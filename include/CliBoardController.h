@@ -1,3 +1,6 @@
+#ifndef CLI_BOARD_CONTROLLER_H
+#define CLI_BOARD_CONTROLLER_H
+
 #include <iostream>
 #include "../include/Board.h"
 #include "../include/CliBoardView.h"
@@ -22,3 +25,5 @@ class CliBoardController{
     // the board model through the boardController
     void updateBoard();
 };
+
+#endif

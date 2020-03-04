@@ -1,7 +1,10 @@
+#ifndef WORD_H
+#define WORD_H
+
 #include "../include/Letter.h"
 
 class Word {
-  public: 
+  public:
 
     // Parameters are first and last letter from the word
     Word(Letter, Letter);
@@ -9,7 +12,7 @@ class Word {
     int getSize(){
       return size;
     }
-    
+
     // Word destructor
     ~Word();
 
@@ -24,3 +27,5 @@ class Word {
     // Calculates the word size based on the firs and last letter coordinates.
     int calculateWordSize();
 };
+
+#endif

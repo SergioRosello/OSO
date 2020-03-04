@@ -1,9 +1,12 @@
+#ifndef LETTER_H
+#define LETTER_H
+
 struct Coordinates {
   int x;
   int y;
 
   // Struct Coordinates constructor
-  // assigns x to x 
+  // assigns x to x
   // assigns y to y
   // Default coordinates are set to -1, wich are invalid
   Coordinates(int x = -1, int y = -1)
@@ -36,7 +39,9 @@ class Letter {
       return letter;
     }
 
-  private: 
+  private:
     Coordinates coordinates;
     char letter;
 };
+
+#endif
