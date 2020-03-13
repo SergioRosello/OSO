@@ -1,4 +1,5 @@
 #include "../include/Board.h"
+#include "../include/Letter.h"
 #include "gtest/gtest.h"
 
 namespace {
@@ -40,6 +41,12 @@ TEST_F(BoardTest, MethodInitializationSetsTo0) {
   // Generate data to check
   // Generate a matrix to check with?
   EXPECT_EQ(board.board[rows-1][columns-1], 0);
+}
+
+TEST_F(BoardTest, PlaceLetterOIn23) {
+    Letter letter = Letter(Coordinates(2, 3), 'O');
+    board.placeLetter(letter);
+    EXPECT_EQ(board.board[2][3], 1);
 }
 
 }  // namespace

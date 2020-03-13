@@ -2,6 +2,7 @@
 #define BOARD_H
 
 #include <string>
+#include "Letter.h"
 
 class Board{
 
@@ -14,6 +15,7 @@ class Board{
     void printBoard();
     std::string getKeyword();
     void setKeyword(std::string keyword);
+    void placeLetter(Letter letter);
 
   private:
     int row;

@@ -17,7 +17,7 @@ Board::Board(int row, int column, string keyword){
 void Board::printBoard(){
   for(int i = 0; i < this->row; ++i){
     for(int j = 0; j < this->column; ++j){
-      cout << "[" << i << "][" << j << "] = " << this->board[i][j] << " ";
+      cout << "[" << i << "][" << j << "] = " << this->board[i][j] << endl;
     }
     cout << endl;
   }
@@ -38,6 +38,12 @@ string Board::getKeyword() {
 
 void Board::setKeyword(string keyword) {
     this->keyword = keyword;
+}
+
+void Board::placeLetter(Letter letter) {
+    int x = letter.getCoordinates().x;
+    int y = letter.getCoordinates().y;
+    this->board[x][y] = 1;
 }
 
 // Destructor method
