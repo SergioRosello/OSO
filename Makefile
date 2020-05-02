@@ -2,7 +2,7 @@ OSO_CFLAGS = -o OSO
 TEST_CFLAGS = -o OSO -lgtest -lpthread
 CC = g++
 OSO_SRC = src/*.cpp
-TEST_SRC = tests/TestBoard.cpp tests/TestUser.cpp tests/TestWord.cpp tests/main.cpp src/Board.cpp src/User.cpp src/Word.cpp src/Cell.cpp
+TEST_SRC = tests/TestBoard.cpp tests/TestUser.cpp tests/TestWord.cpp tests/main.cpp src/Board.cpp src/Player.cpp src/Selection.cpp src/Cell.cpp
 OSO_OBJ = $(OSO_SRC:.cpp = .o)
 TEST_OBJ = $(TEST_SRC:.cpp = .o)
 oso:

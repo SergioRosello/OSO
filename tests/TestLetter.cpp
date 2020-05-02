@@ -1,5 +1,6 @@
-#include "../include/Cell.h"
 #include "gtest/gtest.h"
+
+#include "../include/Cell.h"
 
 namespace OSO {
 

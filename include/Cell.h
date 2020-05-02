@@ -5,33 +5,24 @@ struct Coordinates {
   int x;
   int y;
   
-  Coordinates(int x = -1, int y = -1): x(x), y(y) {}
+  Coordinates(int x = -1, int y = -1);
 };
 
 class Cell {
   public:
     Cell();
     Cell(Coordinates coordinates, char content);
+    bool operator==(Cell other) const;
+    ~Cell();
 
-    int getXCoordinate(){
-      return coordinates.x;
-    }
+    int GetXCoordinate();
+    int GetYCoordinate();
 
-    int getYCoordinate() {
-      return coordinates.y;
-    }
-
-    char getContent(){
-      return content;
-    }
-
-    bool operator==(Cell other) const {
-      return (coordinates.x == other.coordinates.x) && (coordinates.y == other.coordinates.y);
-    }
+    char content();
 
   private:
-    Coordinates coordinates;
-    char content;
+    Coordinates coordinates_;
+    char content_;
 };
 
 #endif

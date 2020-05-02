@@ -1,5 +1,3 @@
-#include "../include/User.h"
-#include "../include/Board.h"
 #include "gtest/gtest.h"
 
 int main(int argc, char **argv) {

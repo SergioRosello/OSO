@@ -14,7 +14,7 @@ class CliBoardController{
 
     // Returns one of the board's sides size
     int getBoardSize();
-    // Asks User for a letter, and converts it to
+    // Asks Player for a letter, and converts it to
     // type Letter, to use custom classes in whole
     // programm.
     Cell getUserLetter();

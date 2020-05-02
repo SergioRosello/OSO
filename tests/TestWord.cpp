@@ -1,5 +1,6 @@
-#include "../include/Word.h"
 #include "gtest/gtest.h"
+
+#include "../include/Selection.h"
 
 namespace OSO {
 
@@ -38,8 +39,8 @@ namespace OSO {
     Cell thirdLetter = Cell(Coordinates(0, 1), 'L');
     Cell lastLetter = Cell(Coordinates(0, 0), 'A');
 
-    Word word = Word(firstLetter, lastLetter);
-    EXPECT_EQ(word.getSize(), 4);
+    Selection word = Selection(firstLetter, lastLetter);
+    EXPECT_EQ(word.GetSize(), 4);
   }
 
   TEST_F(WordTest, CheckWordOrientationSizeIsCorrect) {
@@ -48,64 +49,64 @@ namespace OSO {
     Cell secondNorthLetter = Cell(Coordinates(0, 1), 'S');
     Cell thirdNorthLetter = Cell(Coordinates(0, 0), 'O');
 
-    Word northWord = Word(firstNorthLetter, thirdNorthLetter);
-    EXPECT_EQ(northWord.getSize(), 3);
+    Selection northWord = Selection(firstNorthLetter, thirdNorthLetter);
+    EXPECT_EQ(northWord.GetSize(), 3);
 
     // North-East
     Cell firstNorthEastLetter = Cell(Coordinates(0, 2), 'O');
     Cell secondNorthEastLetter = Cell(Coordinates(1, 2), 'S');
     Cell thirdNorthEastLetter = Cell(Coordinates(2, 0), 'O');
 
-    Word northEastWord = Word(firstNorthEastLetter, thirdNorthEastLetter);
-    EXPECT_EQ(northEastWord.getSize(), 3);
+    Selection northEastWord = Selection(firstNorthEastLetter, thirdNorthEastLetter);
+    EXPECT_EQ(northEastWord.GetSize(), 3);
 
     // East
     Cell firstEastLetter = Cell(Coordinates(0, 0), 'O');
     Cell secondEastLetter = Cell(Coordinates(1, 0), 'S');
     Cell thirdEastLetter = Cell(Coordinates(2, 0), 'O');
 
-    Word eastWord = Word(firstEastLetter, thirdEastLetter);
-    EXPECT_EQ(eastWord.getSize(), 3);
+    Selection eastWord = Selection(firstEastLetter, thirdEastLetter);
+    EXPECT_EQ(eastWord.GetSize(), 3);
 
     // South-East
     Cell firstSouthEastLetter = Cell(Coordinates(0, 0), 'O');
     Cell secondSouthEastLetter = Cell(Coordinates(1, 1), 'S');
     Cell thirdSouthEastLetter = Cell(Coordinates(2, 2), 'O');
 
-    Word southEastWord = Word(firstSouthEastLetter, thirdSouthEastLetter);
-    EXPECT_EQ(southEastWord.getSize(), 3);
+    Selection southEastWord = Selection(firstSouthEastLetter, thirdSouthEastLetter);
+    EXPECT_EQ(southEastWord.GetSize(), 3);
 
     // South
     Cell firstSouthLetter = Cell(Coordinates(0, 0), 'O');
     Cell secondSouthLetter = Cell(Coordinates(0, 1), 'S');
     Cell thirdSouthLetter = Cell(Coordinates(0, 2), 'O');
 
-    Word southWord = Word(firstSouthLetter, thirdSouthLetter);
-    EXPECT_EQ(southWord.getSize(), 3);
+    Selection southWord = Selection(firstSouthLetter, thirdSouthLetter);
+    EXPECT_EQ(southWord.GetSize(), 3);
 
     // Sout-West
     Cell firstSouthWestLetter = Cell(Coordinates(2, 0), 'O');
     Cell secondSouthWestLetter = Cell(Coordinates(1, 1), 'S');
     Cell thirdSouthWestLetter = Cell(Coordinates(0, 2), 'O');
 
-    Word southWestWord = Word(firstSouthWestLetter, thirdSouthWestLetter);
-    EXPECT_EQ(southWestWord.getSize(), 3);
+    Selection southWestWord = Selection(firstSouthWestLetter, thirdSouthWestLetter);
+    EXPECT_EQ(southWestWord.GetSize(), 3);
 
     // West
     Cell firstWestLetter = Cell(Coordinates(2, 0), 'O');
     Cell secondWestLetter = Cell(Coordinates(1, 0), 'S');
     Cell thirdWestLetter = Cell(Coordinates(0, 0), 'O');
 
-    Word westWord = Word(firstWestLetter, thirdWestLetter);
-    EXPECT_EQ(westWord.getSize(), 3);
+    Selection westWord = Selection(firstWestLetter, thirdWestLetter);
+    EXPECT_EQ(westWord.GetSize(), 3);
 
     // North-West
     Cell firstNorthWestLetter = Cell(Coordinates(2, 2), 'O');
     Cell secondNorthWestLetter = Cell(Coordinates(1, 1), 'S');
     Cell thirdNorthWestLetter = Cell(Coordinates(0, 0), 'O');
 
-    Word northWestWord = Word(firstNorthWestLetter, thirdNorthWestLetter);
-    EXPECT_EQ(northWestWord.getSize(), 3);
+    Selection northWestWord = Selection(firstNorthWestLetter, thirdNorthWestLetter);
+    EXPECT_EQ(northWestWord.GetSize(), 3);
 
   }
 

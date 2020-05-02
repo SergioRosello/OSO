@@ -1,5 +1,6 @@
-#include "../include/User.h"
 #include "gtest/gtest.h"
+
+#include "../include/Player.h"
 
 namespace {
 
@@ -30,14 +31,14 @@ namespace {
       }
 
       // Objects declared here can be used by all tests in the test suite for Foo.
-      User user = User("Ken");
+      Player user = Player("Ken");
   };
 
   // Tests that the Matrix::Initialize() initializes to 0.
   TEST_F(UserTest, Constructor) {
     // Generate data to check
     // Generate a matrix to check with?
-    EXPECT_EQ(user.getUsername(), "Ken");
+    EXPECT_EQ(user.name(), "Ken");
   }
 
 }  // namespace

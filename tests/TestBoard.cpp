@@ -42,8 +42,8 @@ TEST_F(BoardTest, MethodInitializationSetsToDefaultValue) {
 
 TEST_F(BoardTest, PlaceLetterOIn23) {
     Cell letter = Cell(Coordinates(2, 3), 'O');
-    board.placeLetter(letter);
-    EXPECT_EQ(board(2, 3).getContent(), 'O');
+    board.PlaceLetter(letter);
+    EXPECT_EQ(board(2, 3).content(), 'O');
 }
 
 }  // namespace

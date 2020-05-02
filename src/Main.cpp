@@ -4,8 +4,8 @@
 #include <vector>
 
 #include "../include/Board.h"
-#include "../include/Word.h"
-#include "../include/User.h"
+#include "../include/Selection.h"
+#include "../include/Player.h"
 
 using namespace std;
 
@@ -33,7 +33,7 @@ int main(){
 
     char exitKey;
     do {
-        board.printBoard();
+        board.ShowBoard();
 
         char newLetter;
         int xCoord, yCoord;
@@ -41,21 +41,21 @@ int main(){
         cin >> newLetter;
         xCoord = getIntegerInput("Please, enter X coord of letter: ");
         yCoord = getIntegerInput("Please, enter Y coord of letter: ");
-        if (board.areCoordinatesValid(xCoord, yCoord)) {
+        if (board.AreCoordinatesValid(xCoord, yCoord)) {
             cout << "Coordinates are valid" << endl;
-            board.placeLetter(Cell(Coordinates(xCoord, yCoord), newLetter));
+            board.PlaceLetter(Cell(Coordinates(xCoord, yCoord), newLetter));
             cout << "Do you see any OSO? (y/n)" << endl;
             char isUserSeingKeyword;
             cin >> isUserSeingKeyword;
             if (isUserSeingKeyword == 'y') {
                 cout << "Mark it!" << endl;
                 vector<Cell> selectedLetters;
-                for (int i = 0; i < board.getKeyword().size(); i++) {
-                    cout << "char is: " << board.getKeyword()[i] << endl;
+                for (int i = 0; i < board.keyword().size(); i++) {
+                    cout << "char is: " << board.keyword()[i] << endl;
                     cout << "What are the three coordinates of letter number "<< i << "?: ";
                     xCoord = getIntegerInput("Please, enter X coord of letter: ");
                     yCoord = getIntegerInput("Please, enter Y coord of letter: ");
-                    Cell selectedLetter = Cell(Coordinates(xCoord, yCoord), board.getLetterAt(Coordinates(xCoord, yCoord)).getContent());
+                    Cell selectedLetter = Cell(Coordinates(xCoord, yCoord), board.GetLetterAt(Coordinates(xCoord, yCoord)).content());
                 }
 
                 // TODO check if user selection is valid

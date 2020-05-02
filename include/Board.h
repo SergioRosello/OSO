@@ -13,24 +13,24 @@ class Board{
     Board(int columns, int rows, std::string keyword);
     ~Board();
 
-    void initialize();
-    void printBoard();
-    std::string getKeyword();
-    void setKeyword(std::string keyword);
-    bool areCoordinatesValid(int x, int y);
-    void placeLetter(Cell letter);
-    Cell getLetterAt(Coordinates coordinates);
-    bool isSelectionValid(std::vector<Cell> selection);
+    void ShowBoard();
+    Cell GetLetterAt(Coordinates coordinates);
+    void PlaceLetter(Cell letter);
+    bool AreCoordinatesValid(int x, int y);
+    bool IsSelectionValid(std::vector<Cell> selection);
+
+    std::string keyword();
+    void set_keyword(std::string keyword);
 
     Cell &operator() (int column, int row) {
-      return cells[(row * columns) + column];
+      return cells_[(row * columns_) + column];
     }
 
   private:
-    int columns;
-    int rows;
-    std::vector<Cell> cells;
-    std::string keyword;
+    int columns_;
+    int rows_;
+    std::vector<Cell> cells_;
+    std::string keyword_;
 };
 
 #endif
