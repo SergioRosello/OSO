@@ -6,6 +6,6 @@ This game follows the same mechanics, except for a couple of rules:
 * The users score points based on how many "OSO" words they can spot and create
 * The user with most points, wins the game
 
-## Class diagram
+## Class diagram *(TODO: to be updated)*
 
 ![Class diagram](./wikiAssets/umlDiagram.png)

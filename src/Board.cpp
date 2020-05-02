@@ -1,35 +1,26 @@
 #include <iostream>
+#include <algorithm>
+
 #include "../include/Board.h"
 
 using namespace std;
 
-Board::Board(int row, int column, string keyword){
-  this->row = row;
-  this->column = column;
-  this->keyword = keyword;
+Board::Board() {}
 
-  this->board = new int*[this->row];
-  for(int i = 0; i < row; ++i){
-    this->board[i] = new int[this->column];
-  }
+Board::Board(int columns, int rows, string keyword)
+    : columns(columns), rows(rows), cells(columns * rows), keyword(keyword) {}
+
+void Board::printBoard() {
+    for(int i = 0; i < cells.size(); ++i){
+      cout << cells[i].getContent() << " ";
+      if ((i + 1) % columns == 0) {
+        cout << endl;
+      }
+    }
 }
 
-void Board::printBoard(){
-  for(int i = 0; i < this->row; ++i){
-    for(int j = 0; j < this->column; ++j){
-      cout << "[" << i << "][" << j << "] = " << this->board[i][j] << endl;
-    }
-    cout << endl;
-  }
-}
-
-int Board::initialize(){
-  for(int i = 0; i < this->row; ++i){
-    for(int j = 0; j < this->column; ++j){
-      this->board[i][j] = 0;
-    }
-  }
-  return 0;
+void Board::initialize(){
+  fill(cells.begin(), cells.end(), Cell());
 }
 
 string Board::getKeyword() {
@@ -40,15 +31,18 @@ void Board::setKeyword(string keyword) {
     this->keyword = keyword;
 }
 
-void Board::placeLetter(Letter letter) {
-    int x = letter.getCoordinates().x;
-    int y = letter.getCoordinates().y;
-    this->board[x][y] = 1;
+bool Board::areCoordinatesValid(int x, int y) {
+    return (x >= 0 && x < columns) && (y >= 0 && y < rows);
 }
 
-// Destructor method
-Board::~Board(){
-  for(int i = 0; i < this->row; ++i)
-    delete [] this->board[this->column];
-  delete [] this->board;
+void Board::placeLetter(Cell letter) {
+    int x = letter.getXCoordinate();
+    int y = letter.getYCoordinate();
+    cells[(y * columns) + x] = letter;
 }
+
+Cell Board::getLetterAt(Coordinates coordinates) {
+    return cells[(coordinates.y * columns) + coordinates.x];
+}
+
+Board::~Board() {}

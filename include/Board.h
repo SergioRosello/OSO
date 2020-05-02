@@ -2,24 +2,34 @@
 #define BOARD_H
 
 #include <string>
-#include "Letter.h"
+#include <vector>
+
+#include "Cell.h"
 
 class Board{
 
   public:
-    int **board;
-    Board(){}
-    Board(int row, int column, std::string keyword);
+    Board();
+    Board(int columns, int rows, std::string keyword);
     ~Board();
-    int initialize();
+
+    void initialize();
     void printBoard();
     std::string getKeyword();
     void setKeyword(std::string keyword);
-    void placeLetter(Letter letter);
+    bool areCoordinatesValid(int x, int y);
+    void placeLetter(Cell letter);
+    Cell getLetterAt(Coordinates coordinates);
+    bool isSelectionValid(std::vector<Cell> selection);
+
+    Cell &operator() (int column, int row) {
+      return cells[(row * columns) + column];
+    }
 
   private:
-    int row;
-    int column;
+    int columns;
+    int rows;
+    std::vector<Cell> cells;
     std::string keyword;
 };
 

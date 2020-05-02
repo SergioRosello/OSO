@@ -1,24 +1,19 @@
 #include <algorithm>
+
 #include "../include/Word.h"
 
 using namespace std;
 
-// Check if the word is valid
-// initialise the word
-Word::Word(Letter f, Letter l) {
+Word::Word(Cell f, Cell l) {
   this->first = f;
   this->last = l;
   this->size = calculateWordSize();
 }
 
-
-// Calculates the height of the word.
-// It can only be 1 or 3
-// We have to add one because of the substraction. It counts 0
-int Word::calculateWordSize() {
-  const int height = abs(first.getCoordinates().y - last.getCoordinates().y) + 1;
-  const int width = abs(first.getCoordinates().x - last.getCoordinates().x) + 1;
-  return max(height, width);
+int Word::calculateWordSize() {  
+  const int width = abs(last.getXCoordinate() - first.getXCoordinate()) + 1;
+  const int height = abs(last.getYCoordinate() - first.getYCoordinate()) + 1;
+  return max(width, height);
 }
 
 Word::~Word() {

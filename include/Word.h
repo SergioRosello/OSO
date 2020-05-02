@@ -1,13 +1,13 @@
 #ifndef WORD_H
 #define WORD_H
 
-#include "../include/Letter.h"
+#include "../include/Cell.h"
 
 class Word {
   public:
 
     // Parameters are first and last letter from the word
-    Word(Letter, Letter);
+    Word(Cell, Cell);
 
     int getSize(){
       return size;
@@ -19,8 +19,8 @@ class Word {
   private:
 
     // The coordinates for the first and last letter of the word
-    Letter first;
-    Letter last;
+    Cell first;
+    Cell last;
 
     // Stores the word size
     int size;

@@ -1,5 +1,5 @@
 #include "../include/Board.h"
-#include "../include/Letter.h"
+#include "../include/Cell.h"
 #include "gtest/gtest.h"
 
 namespace {
@@ -36,17 +36,14 @@ class BoardTest : public ::testing::Test {
   // Objects declared here can be used by all tests in the test suite for Foo.
 };
 
-// Tests that the Matrix::Initialize() initializes to 0.
-TEST_F(BoardTest, MethodInitializationSetsTo0) {
-  // Generate data to check
-  // Generate a matrix to check with?
-  EXPECT_EQ(board.board[rows-1][columns-1], 0);
+TEST_F(BoardTest, MethodInitializationSetsToDefaultValue) {
+  EXPECT_EQ(board(rows - 1, columns - 1), Cell());
 }
 
 TEST_F(BoardTest, PlaceLetterOIn23) {
-    Letter letter = Letter(Coordinates(2, 3), 'O');
+    Cell letter = Cell(Coordinates(2, 3), 'O');
     board.placeLetter(letter);
-    EXPECT_EQ(board.board[2][3], 1);
+    EXPECT_EQ(board(2, 3).getContent(), 'O');
 }
 
 }  // namespace

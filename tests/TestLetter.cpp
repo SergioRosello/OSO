@@ -1,4 +1,4 @@
-#include "../include/Letter.h"
+#include "../include/Cell.h"
 #include "gtest/gtest.h"
 
 namespace OSO {
