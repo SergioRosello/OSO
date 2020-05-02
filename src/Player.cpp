@@ -9,8 +9,8 @@ Player::Player(string name) {
 
 Player::~Player() {}
 
-void Player::IncrementScore(int s){
-  score_ += s;
+void Player::IncrementScore(int score) {
+  score_ += score;
 }
 
 void Player::ResetScore() {

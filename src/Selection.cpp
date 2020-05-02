@@ -11,7 +11,7 @@ Selection::Selection(Cell first, Cell last) {
 
 Selection::~Selection() {}
 
-int Selection::GetSize() {  
+int Selection::GetSize() {
   const int width = abs(last_.GetXCoordinate() - first_.GetXCoordinate()) + 1;
   const int height = abs(last_.GetYCoordinate() - first_.GetYCoordinate()) + 1;
   return max(width, height);

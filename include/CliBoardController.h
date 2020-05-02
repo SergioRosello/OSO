@@ -1,5 +1,5 @@
-#ifndef CLI_BOARD_CONTROLLER_H
-#define CLI_BOARD_CONTROLLER_H
+#ifndef CLIBOARDCONTROLLER_H_
+#define CLIBOARDCONTROLLER_H_
 
 #include <iostream>
 #include "../include/Board.h"
@@ -7,9 +7,7 @@
 #include "../include/Cell.h"
 
 class CliBoardController{
-
   public:
-
     Board board;
 
     // Returns one of the board's sides size
@@ -26,4 +24,4 @@ class CliBoardController{
     void updateBoard();
 };
 
-#endif
+#endif  // CLIBOARDCONTROLLER_H_

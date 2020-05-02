@@ -2,7 +2,7 @@
 
 Coordinates::Coordinates(int x, int y): x(x), y(y) {}
 
-Cell::Cell(){
+Cell::Cell() {
   coordinates_ = Coordinates();
   content_ = '-';
 }
@@ -15,10 +15,11 @@ Cell::Cell(Coordinates coords, char cont) {
 Cell::~Cell() {}
 
 bool Cell::operator==(Cell other) const {
-  return (coordinates_.x == other.coordinates_.x) && (coordinates_.y == other.coordinates_.y);
+  return (coordinates_.x == other.coordinates_.x)
+      && (coordinates_.y == other.coordinates_.y);
 }
 
-int Cell::GetXCoordinate(){
+int Cell::GetXCoordinate() {
   return coordinates_.x;
 }
 
@@ -26,6 +27,6 @@ int Cell::GetYCoordinate() {
   return coordinates_.y;
 }
 
-char Cell::content(){
+char Cell::content() {
   return content_;
 }

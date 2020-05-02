@@ -1,9 +1,8 @@
-#ifndef CLI_BOARD_VIEW_H
-#define CLI_BOARD_VIEW_H
-
+#ifndef CLIBOARDVIEW_H_
+#define CLIBOARDVIEW_H_
 
 class CliBoardView {
   void drawBoard();
 };
 
-#endif
+#endif  // CLIBOARDVIEW_H_

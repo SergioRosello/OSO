@@ -1,11 +1,10 @@
-#ifndef CELL_H
-#define CELL_H
+#ifndef CELL_H_
+#define CELL_H_
 
 struct Coordinates {
   int x;
   int y;
-  
-  Coordinates(int x = -1, int y = -1);
+  explicit Coordinates(int x = -1, int y = -1);
 };
 
 class Cell {
@@ -25,4 +24,4 @@ class Cell {
     char content_;
 };
 
-#endif
+#endif  // CELL_H_

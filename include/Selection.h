@@ -1,5 +1,5 @@
-#ifndef SELECTION_H
-#define SELECTION_H
+#ifndef SELECTION_H_
+#define SELECTION_H_
 
 #include "../include/Cell.h"
 
@@ -15,4 +15,4 @@ class Selection {
     Cell last_;
 };
 
-#endif
+#endif  // SELECTION_H_

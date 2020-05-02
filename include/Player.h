@@ -1,11 +1,11 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef PLAYER_H_
+#define PLAYER_H_
 
-#include <iostream>
+#include <string>
 
 class Player {
   public:
-    Player(std::string name);
+    explicit Player(std::string name);
     ~Player();
 
     void IncrementScore(int score);
@@ -20,4 +20,4 @@ class Player {
     int score_;
 };
 
-#endif
+#endif  // PLAYER_H_

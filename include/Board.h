@@ -1,5 +1,5 @@
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef BOARD_H_
+#define BOARD_H_
 
 #include <string>
 #include <vector>
@@ -7,7 +7,6 @@
 #include "Cell.h"
 
 class Board{
-
   public:
     Board();
     Board(int columns, int rows, std::string keyword);
@@ -33,4 +32,4 @@ class Board{
     std::string keyword_;
 };
 
-#endif
+#endif  // BOARD_H_

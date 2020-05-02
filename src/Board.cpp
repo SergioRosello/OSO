@@ -8,12 +8,13 @@ using namespace std;
 Board::Board() {}
 
 Board::Board(int columns, int rows, string keyword)
-    : columns_(columns), rows_(rows), cells_(columns * rows), keyword_(keyword) {}
+    : columns_(columns), rows_(rows),
+      cells_(columns * rows), keyword_(keyword) {}
 
 Board::~Board() {}
 
 void Board::ShowBoard() {
-    for(int i = 0; i < cells_.size(); ++i){
+    for (int i = 0; i < cells_.size(); ++i) {
       cout << cells_[i].content() << " ";
       if ((i + 1) % columns_ == 0) {
         cout << endl;

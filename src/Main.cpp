@@ -26,7 +26,7 @@ int getIntegerInput(string msg) {
     return input;
 }
 
-int main(){
+int main() {
     int rows = 10;
     int columns = 10;
     Board board = Board(rows, columns, "oso");
@@ -58,14 +58,14 @@ int main(){
                     Cell selectedLetter = Cell(Coordinates(xCoord, yCoord), board.GetLetterAt(Coordinates(xCoord, yCoord)).content());
                 }
 
-                // TODO check if user selection is valid
+                // TODO(minicatsCB): Check if user selection is valid
             }
         } else {
             cout << "Coordinates are NOT valid" << endl;
         }
         cout << "Exit (y/n)?";
         cin >> exitKey;
-    } while(exitKey != 'y');
+    } while (exitKey != 'y');
 
     return 0;
 }
