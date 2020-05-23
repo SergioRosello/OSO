@@ -43,7 +43,7 @@ int main() {
         yCoord = getIntegerInput("Please, enter Y coord of letter: ");
         if (board.AreCoordinatesValid(xCoord, yCoord)) {
             cout << "Coordinates are valid" << endl;
-            board.PlaceLetter(Cell(Coordinates(xCoord, yCoord), newLetter));
+            board.PlaceLetter(Coordinates(xCoord, yCoord), newLetter);
             cout << "Do you see any OSO? (y/n)" << endl;
             char isUserSeingKeyword;
             cin >> isUserSeingKeyword;
@@ -51,11 +51,12 @@ int main() {
                 cout << "Mark it!" << endl;
                 vector<Cell> selectedLetters;
                 for (int i = 0; i < board.keyword().size(); i++) {
-                    cout << "char is: " << board.keyword()[i] << endl;
                     cout << "What are the three coordinates of letter number "<< i << "?: ";
                     xCoord = getIntegerInput("Please, enter X coord of letter: ");
                     yCoord = getIntegerInput("Please, enter Y coord of letter: ");
-                    Cell selectedLetter = Cell(Coordinates(xCoord, yCoord), board.GetLetterAt(Coordinates(xCoord, yCoord)).content());
+                    Coordinates coords = Coordinates(xCoord, yCoord);
+                    char content = board.GetLetterAt(coords).content();
+                    Cell selectedLetter = Cell(coords, content);
                 }
 
                 // TODO(minicatsCB): Check if user selection is valid

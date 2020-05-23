@@ -26,10 +26,8 @@ Cell Board::GetLetterAt(Coordinates coordinates) {
     return cells_[(coordinates.y * columns_) + coordinates.x];
 }
 
-void Board::PlaceLetter(Cell letter) {
-    int x = letter.GetXCoordinate();
-    int y = letter.GetYCoordinate();
-    cells_[(y * columns_) + x] = letter;
+void Board::PlaceLetter(Coordinates coords, char content) {
+    cells_[(coords.y * columns_) + coords.x] = Cell(coords, content);
 }
 
 bool Board::AreCoordinatesValid(int x, int y) {

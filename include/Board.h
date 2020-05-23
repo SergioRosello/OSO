@@ -14,7 +14,7 @@ class Board{
 
     void ShowBoard();
     Cell GetLetterAt(Coordinates coordinates);
-    void PlaceLetter(Cell letter);
+    void PlaceLetter(Coordinates coords, char content);
     bool AreCoordinatesValid(int x, int y);
     bool IsSelectionValid(std::vector<Cell> selection);
 
