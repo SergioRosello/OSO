@@ -51,15 +51,16 @@ int main() {
                 cout << "Mark it!" << endl;
                 vector<Cell> selectedLetters;
                 for (int i = 0; i < board.keyword().size(); i++) {
-                    cout << "What are the three coordinates of letter number "<< i << "?: ";
+                    cout << "What are the three coordinates of letter number "<< i << "?: " << endl;
                     xCoord = getIntegerInput("Please, enter X coord of letter: ");
                     yCoord = getIntegerInput("Please, enter Y coord of letter: ");
                     Coordinates coords = Coordinates(xCoord, yCoord);
                     char content = board.GetLetterAt(coords).content();
                     Cell selectedLetter = Cell(coords, content);
+                    selectedLetters.push_back(selectedLetter);
                 }
 
-                // TODO(minicatsCB): Check if user selection is valid
+                board.IsSelectionValid(selectedLetters);
             }
         } else {
             cout << "Coordinates are NOT valid" << endl;

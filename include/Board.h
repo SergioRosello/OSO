@@ -30,6 +30,9 @@ class Board{
     int rows_;
     std::vector<Cell> cells_;
     std::string keyword_;
+
+    bool IsSelectionAligned(std::vector<Cell> selection);
+    bool DoesSelectionContainsKeyword(std::vector<Cell> selection);
 };
 
 #endif  // BOARD_H_
