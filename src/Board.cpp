@@ -35,22 +35,27 @@ bool Board::AreCoordinatesValid(int x, int y) {
 }
 
 bool Board::IsSelectionValid(vector<Cell> selection) {
-    bool isValid = true;
+    bool isValid = false;
     if (selection.size() == keyword_.size()) {
         cout << "Selection length valid" << endl;
         if (IsSelectionAligned(selection)) {
             cout << "Selection is aligned" << endl;
-            if (DoesSelectionContainsKeyword(selection)) {
-                cout << "Selection contains keyword" << endl;
+            if (IsSelectionConsecutive(selection)) {
+                cout << "Selection is consecutive" << endl;
+                if (DoesSelectionContainsKeyword(selection)) {
+                    cout << "Selection contains keyword" << endl;
+                    isValid = true;
+                } else {
+                    cout << "Selection DOES NOT contains keyword" << endl;
+                }
             } else {
-                cout << "Selection DOES NOT contains keyword" << endl;
+                cout << "Selection is NOT consecutive" << endl;
             }
         } else {
             cout << "Selection is NOT aligned" << endl;
         }
     } else {
         cout << "Selection length (" << selection.size() << ") NOT valid" << endl;
-        isValid = false;
     }
     return isValid;
 }
@@ -66,6 +71,13 @@ bool Board::IsSelectionAligned(vector<Cell> selection) {
             areAligned = ratio1 == ratio2;
     }
     return areAligned;
+}
+
+bool Board::IsSelectionConsecutive(std::vector<Cell> selection) {
+    return ((selection[1].GetXCoordinate() == selection[0].GetXCoordinate() + 1)
+            && (selection[2].GetXCoordinate() == selection[0].GetXCoordinate() + 2))
+            || ((selection[1].GetYCoordinate() == selection[0].GetYCoordinate() + 1)
+            && (selection[2].GetYCoordinate() == selection[0].GetYCoordinate() + 2));
 }
 
 bool Board::DoesSelectionContainsKeyword(std::vector<Cell> selection) {
