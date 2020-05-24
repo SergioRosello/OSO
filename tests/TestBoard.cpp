@@ -40,9 +40,8 @@ TEST_F(BoardTest, MethodInitializationSetsToDefaultValue) {
   EXPECT_EQ(board(rows - 1, columns - 1), Cell());
 }
 
-TEST_F(BoardTest, PlaceLetterOIn23) {
-    Cell letter = Cell(Coordinates(2, 3), 'O');
-    board.PlaceLetter(letter);
+TEST_F(BoardTest, PlaceLetterIn23) {
+    board.PlaceLetter(Coordinates(2, 3), 'O');
     EXPECT_EQ(board(2, 3).content(), 'O');
 }
 
