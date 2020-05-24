@@ -32,6 +32,7 @@ class Board{
     std::string keyword_;
 
     bool IsSelectionAligned(std::vector<Cell> selection);
+    bool IsSelectionConsecutive(std::vector<Cell> selection);
     bool DoesSelectionContainsKeyword(std::vector<Cell> selection);
 };
 
