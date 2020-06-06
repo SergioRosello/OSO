@@ -66,8 +66,8 @@ bool Board::IsSelectionAligned(vector<Cell> selection) {
         && selection[1].GetXCoordinate() == selection[2].GetXCoordinate())
     && !(selection[0].GetYCoordinate() == selection[1].GetYCoordinate()
         && selection[1].GetYCoordinate() == selection[2].GetYCoordinate())) {
-            int ratio1 = (selection[1].GetXCoordinate() - selection[0].GetXCoordinate()) / (selection[2].GetXCoordinate() - selection[1].GetXCoordinate());
-            int ratio2 = (selection[1].GetYCoordinate() - selection[0].GetYCoordinate()) / (selection[2].GetYCoordinate() - selection[1].GetYCoordinate());
+            float ratio1 = (float)(selection[1].GetXCoordinate() - selection[0].GetXCoordinate()) / (selection[2].GetXCoordinate() - selection[1].GetXCoordinate());
+            float ratio2 = (float)(selection[1].GetYCoordinate() - selection[0].GetYCoordinate()) / (selection[2].GetYCoordinate() - selection[1].GetYCoordinate());
             areAligned = ratio1 == ratio2;
     }
     return areAligned;
