@@ -62,7 +62,7 @@ int main() {
                     cin >> isUserSeingKeyword;
                     if (isUserSeingKeyword == 'y') {
                         cout << "Mark it!" << endl;
-                        vector<Cell> selectedLetters;
+                        Selection selectedLetters;
                         for (int i = 0; i < board.keyword().size(); i++) {
                             cout << "What are the three coordinates of letter number "<< i << "?: " << endl;
                             xCoord = getIntegerInput("Please, enter X coord of letter: ");
@@ -70,7 +70,7 @@ int main() {
                             Coordinates coords = Coordinates(xCoord, yCoord);
                             char content = board.GetLetterAt(coords).content();
                             Cell selectedLetter = Cell(coords, content);
-                            selectedLetters.push_back(selectedLetter);
+                            selectedLetters.AddCell(selectedLetter);
                         }
 
                         if (board.IsSelectionValid(selectedLetters)) {

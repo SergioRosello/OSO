@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Cell.h"
+#include "Selection.h"
 
 class Board{
   public:
@@ -16,7 +17,7 @@ class Board{
     Cell GetLetterAt(Coordinates coordinates);
     void PlaceLetter(Coordinates coords, char content);
     bool AreCoordinatesValid(int x, int y);
-    bool IsSelectionValid(std::vector<Cell> selection);
+    bool IsSelectionValid(Selection selection);
 
     std::string keyword();
     void set_keyword(std::string keyword);
@@ -30,10 +31,6 @@ class Board{
     int rows_;
     std::vector<Cell> cells_;
     std::string keyword_;
-
-    bool IsSelectionAligned(std::vector<Cell> selection);
-    bool IsSelectionConsecutive(std::vector<Cell> selection);
-    bool DoesSelectionContainsKeyword(std::vector<Cell> selection);
 };
 
 #endif  // BOARD_H_

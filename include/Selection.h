@@ -1,18 +1,37 @@
 #ifndef SELECTION_H_
 #define SELECTION_H_
 
+#include <vector>
+#include <string>
+
 #include "../include/Cell.h"
 
 class Selection {
   public:
-    Selection(Cell first, Cell last);
+    Selection();
     ~Selection();
 
-    int GetSize();
+    bool IsAligned();
+    bool IsConsecutive();
+    bool DoesContainKeyword(std::string keyword);
+    void AddCell(Cell cell);
+
+    int size();
+    int direction();
 
   private:
-    Cell first_;
-    Cell last_;
+    std::vector<Cell> selection_;
+    int direction_ = -1;
+    enum Direction {
+      kUp,
+      kUpRight,
+      kRight,
+      kDownRight,
+      kDown,
+      kDownLeft,
+      kLeft,
+      kUpLeft
+    };
 };
 
 #endif  // SELECTION_H_
