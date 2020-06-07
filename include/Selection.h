@@ -6,6 +6,17 @@
 
 #include "../include/Cell.h"
 
+  enum Direction {
+    kUp,
+    kUpRight,
+    kRight,
+    kDownRight,
+    kDown,
+    kDownLeft,
+    kLeft,
+    kUpLeft
+  };
+
 class Selection {
   public:
     Selection();
@@ -22,16 +33,6 @@ class Selection {
   private:
     std::vector<Cell> selection_;
     int direction_ = -1;
-    enum Direction {
-      kUp,
-      kUpRight,
-      kRight,
-      kDownRight,
-      kDown,
-      kDownLeft,
-      kLeft,
-      kUpLeft
-    };
 };
 
 #endif  // SELECTION_H_

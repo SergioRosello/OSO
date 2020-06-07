@@ -53,10 +53,11 @@ int Selection::direction() {
     int xDelta = selection_[1].GetXCoordinate() - selection_[0].GetXCoordinate();
     int yDelta = selection_[1].GetYCoordinate() - selection_[0].GetYCoordinate();
 
+    // The coordinates of the board are represented downside, like in graphical displays
     if (xDelta == 0 && yDelta > 0) {
-      direction_ = Direction::kUp;
-    } else if (xDelta == 0 && yDelta < 0) {
       direction_ = Direction::kDown;
+    } else if (xDelta == 0 && yDelta < 0) {
+      direction_ = Direction::kUp;
     }
 
     if (yDelta == 0 && xDelta > 0) {
@@ -66,15 +67,15 @@ int Selection::direction() {
     }
 
     if (yDelta > 0 && xDelta > 0) {
-      direction_ = Direction::kUpRight;
-    } else if (yDelta < 0 && xDelta > 0) {
       direction_ = Direction::kDownRight;
+    } else if (yDelta < 0 && xDelta > 0) {
+      direction_ = Direction::kUpRight;
     }
 
     if (yDelta < 0 && xDelta < 0) {
-      direction_ = Direction::kDownLeft;
-    } else if (yDelta > 0 && xDelta < 0) {
       direction_ = Direction::kUpLeft;
+    } else if (yDelta > 0 && xDelta < 0) {
+      direction_ = Direction::kDownLeft;
     }
   }
 

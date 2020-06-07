@@ -39,75 +39,102 @@ namespace OSO {
     Cell thirdLetter = Cell(Coordinates(0, 1), 'L');
     Cell lastLetter = Cell(Coordinates(0, 0), 'A');
 
-    Selection word = Selection(firstLetter, lastLetter);
-    EXPECT_EQ(word.GetSize(), 4);
+    Selection word;
+    word.AddCell(firstLetter);
+    word.AddCell(secondLetter);
+    word.AddCell(thirdLetter);
+    word.AddCell(lastLetter);
+    EXPECT_EQ(word.size(), 4);
   }
 
-  TEST_F(WordTest, CheckWordOrientationSizeIsCorrect) {
-    // North
-    Cell firstNorthLetter = Cell(Coordinates(0, 2), 'O');
-    Cell secondNorthLetter = Cell(Coordinates(0, 1), 'S');
-    Cell thirdNorthLetter = Cell(Coordinates(0, 0), 'O');
+  TEST_F(WordTest, CheckWordDirectionIsCorrect) {
+    // Up
+    Cell firstUpLetter = Cell(Coordinates(0, 2), 'O');
+    Cell secondUpLetter = Cell(Coordinates(0, 1), 'S');
+    Cell thirdNUpLetter = Cell(Coordinates(0, 0), 'O');
 
-    Selection northWord = Selection(firstNorthLetter, thirdNorthLetter);
-    EXPECT_EQ(northWord.GetSize(), 3);
+    Selection upWord;
+    upWord.AddCell(firstUpLetter);
+    upWord.AddCell(secondUpLetter);
+    upWord.AddCell(thirdNUpLetter);
+    EXPECT_EQ(upWord.direction(), Direction::kUp);
 
-    // North-East
-    Cell firstNorthEastLetter = Cell(Coordinates(0, 2), 'O');
-    Cell secondNorthEastLetter = Cell(Coordinates(1, 2), 'S');
-    Cell thirdNorthEastLetter = Cell(Coordinates(2, 0), 'O');
+    // Up-Right
+    Cell firstUpRightLetter = Cell(Coordinates(0, 5), 'O');
+    Cell secondUpRightLetter = Cell(Coordinates(1, 4), 'S');
+    Cell thirdUpRightLetter = Cell(Coordinates(2, 3), 'O');
 
-    Selection northEastWord = Selection(firstNorthEastLetter, thirdNorthEastLetter);
-    EXPECT_EQ(northEastWord.GetSize(), 3);
+    Selection upRightWord;
+    upRightWord.AddCell(firstUpRightLetter);
+    upRightWord.AddCell(secondUpRightLetter);
+    upRightWord.AddCell(thirdUpRightLetter);
+    EXPECT_EQ(upRightWord.direction(), Direction::kUpRight);
 
-    // East
-    Cell firstEastLetter = Cell(Coordinates(0, 0), 'O');
-    Cell secondEastLetter = Cell(Coordinates(1, 0), 'S');
-    Cell thirdEastLetter = Cell(Coordinates(2, 0), 'O');
+    // Right
+    Cell firstRightLetter = Cell(Coordinates(0, 0), 'O');
+    Cell secondRightLetter = Cell(Coordinates(1, 0), 'S');
+    Cell thirdNRightLetter = Cell(Coordinates(2, 0), 'O');
 
-    Selection eastWord = Selection(firstEastLetter, thirdEastLetter);
-    EXPECT_EQ(eastWord.GetSize(), 3);
+    Selection rightWord;
+    rightWord.AddCell(firstRightLetter);
+    rightWord.AddCell(secondRightLetter);
+    rightWord.AddCell(thirdNRightLetter);
+    EXPECT_EQ(rightWord.direction(), Direction::kRight);
 
-    // South-East
-    Cell firstSouthEastLetter = Cell(Coordinates(0, 0), 'O');
-    Cell secondSouthEastLetter = Cell(Coordinates(1, 1), 'S');
-    Cell thirdSouthEastLetter = Cell(Coordinates(2, 2), 'O');
+    // Down-Right
+    Cell firstDownRightLetter = Cell(Coordinates(0, 0), 'O');
+    Cell secondDownRightLetter = Cell(Coordinates(1, 1), 'S');
+    Cell thirdDownRightLetter = Cell(Coordinates(2, 2), 'O');
 
-    Selection southEastWord = Selection(firstSouthEastLetter, thirdSouthEastLetter);
-    EXPECT_EQ(southEastWord.GetSize(), 3);
+    Selection downRightWord;
+    downRightWord.AddCell(firstDownRightLetter);
+    downRightWord.AddCell(secondDownRightLetter);
+    downRightWord.AddCell(thirdDownRightLetter);
+    EXPECT_EQ(downRightWord.direction(), Direction::kDownRight);
 
-    // South
-    Cell firstSouthLetter = Cell(Coordinates(0, 0), 'O');
-    Cell secondSouthLetter = Cell(Coordinates(0, 1), 'S');
-    Cell thirdSouthLetter = Cell(Coordinates(0, 2), 'O');
+    // Down
+    Cell firstDownLetter = Cell(Coordinates(0, 0), 'O');
+    Cell secondDownLetter = Cell(Coordinates(0, 1), 'S');
+    Cell thirdNDownLetter = Cell(Coordinates(0, 2), 'O');
 
-    Selection southWord = Selection(firstSouthLetter, thirdSouthLetter);
-    EXPECT_EQ(southWord.GetSize(), 3);
+    Selection downWord;
+    downWord.AddCell(firstDownLetter);
+    downWord.AddCell(secondDownLetter);
+    downWord.AddCell(thirdNDownLetter);
+    EXPECT_EQ(downWord.direction(), Direction::kDown);
 
-    // Sout-West
-    Cell firstSouthWestLetter = Cell(Coordinates(2, 0), 'O');
-    Cell secondSouthWestLetter = Cell(Coordinates(1, 1), 'S');
-    Cell thirdSouthWestLetter = Cell(Coordinates(0, 2), 'O');
+    // Down-Left
+    Cell firstDownLeftLetter = Cell(Coordinates(2, 0), 'O');
+    Cell secondDownLeftLetter = Cell(Coordinates(1, 1), 'S');
+    Cell thirdDownLeftLetter = Cell(Coordinates(0, 2), 'O');
 
-    Selection southWestWord = Selection(firstSouthWestLetter, thirdSouthWestLetter);
-    EXPECT_EQ(southWestWord.GetSize(), 3);
+    Selection downLeftWord;
+    downLeftWord.AddCell(firstDownLeftLetter);
+    downLeftWord.AddCell(secondDownLeftLetter);
+    downLeftWord.AddCell(thirdDownLeftLetter);
+    EXPECT_EQ(downLeftWord.direction(), Direction::kDownLeft);
 
-    // West
-    Cell firstWestLetter = Cell(Coordinates(2, 0), 'O');
-    Cell secondWestLetter = Cell(Coordinates(1, 0), 'S');
-    Cell thirdWestLetter = Cell(Coordinates(0, 0), 'O');
+    // Left
+    Cell firstLeftLetter = Cell(Coordinates(2, 0), 'O');
+    Cell secondLeftLetter = Cell(Coordinates(1, 0), 'S');
+    Cell thirdNLeftLetter = Cell(Coordinates(0, 0), 'O');
 
-    Selection westWord = Selection(firstWestLetter, thirdWestLetter);
-    EXPECT_EQ(westWord.GetSize(), 3);
+    Selection leftWord;
+    leftWord.AddCell(firstLeftLetter);
+    leftWord.AddCell(secondLeftLetter);
+    leftWord.AddCell(thirdNLeftLetter);
+    EXPECT_EQ(leftWord.direction(), Direction::kLeft);
 
-    // North-West
-    Cell firstNorthWestLetter = Cell(Coordinates(2, 2), 'O');
-    Cell secondNorthWestLetter = Cell(Coordinates(1, 1), 'S');
-    Cell thirdNorthWestLetter = Cell(Coordinates(0, 0), 'O');
+    // Up-Left
+    Cell firstUpLeftLetter = Cell(Coordinates(2, 2), 'O');
+    Cell secondUpLeftLetter = Cell(Coordinates(1, 1), 'S');
+    Cell thirdUpLeftLetter = Cell(Coordinates(0, 0), 'O');
 
-    Selection northWestWord = Selection(firstNorthWestLetter, thirdNorthWestLetter);
-    EXPECT_EQ(northWestWord.GetSize(), 3);
-
+    Selection upLeftWord;
+    upLeftWord.AddCell(firstUpLeftLetter);
+    upLeftWord.AddCell(secondUpLeftLetter);
+    upLeftWord.AddCell(thirdUpLeftLetter);
+    EXPECT_EQ(upLeftWord.direction(), Direction::kUpLeft);
   }
 
 }  // namespace
