@@ -5,15 +5,15 @@
 namespace OSO {
 
   // The fixture for testing class Foo.
-  class WordTest : public ::testing::Test {
+  class SelectionTest : public ::testing::Test {
     protected:
       // You can remove any or all of the following functions if its body
       // is empty.
-      WordTest() {
+      SelectionTest() {
         // You can do set-up work for each test here.
       }
 
-      ~WordTest() override {
+      ~SelectionTest() override {
         // You can do clean-up work that doesn't throw exceptions here.
       }
 
@@ -33,7 +33,7 @@ namespace OSO {
       // Objects declared here can be used by all tests in the test suite for Foo.
   };
 
-  TEST_F(WordTest, CheckWordSizeIsCorrect) {
+  TEST_F(SelectionTest, CheckWordSizeIsCorrect) {
     Cell firstLetter = Cell(Coordinates(0, 3), 'H');
     Cell secondLetter = Cell(Coordinates(0, 2), 'O');
     Cell thirdLetter = Cell(Coordinates(0, 1), 'L');
@@ -47,7 +47,7 @@ namespace OSO {
     EXPECT_EQ(word.size(), 4);
   }
 
-  TEST_F(WordTest, CheckWordDirectionIsCorrect) {
+  TEST_F(SelectionTest, CheckWordDirectionIsCorrect) {
     // Up
     Cell firstUpLetter = Cell(Coordinates(0, 2), 'O');
     Cell secondUpLetter = Cell(Coordinates(0, 1), 'S');
